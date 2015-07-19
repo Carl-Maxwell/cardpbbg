@@ -41,7 +41,7 @@ def time(times, date, bad, ideal_range)
   else
     nil
   end
-});
+end
 ```
 * Don't use an empty line at the beginning or end of methods, blocks or conditionals
 * Do use one empty line *between* methods, blocks and conditionals in the same scope.
