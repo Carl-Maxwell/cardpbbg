@@ -12,6 +12,7 @@
 * use CamelCase for class names
   * acronyms should be uppercase (RNG not rng)
 * user snake_case for methods and variables
+  * acronyms should be lowercase (rng not RNG)
 
 ## Whitespace
 

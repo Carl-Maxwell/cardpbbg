@@ -7,9 +7,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
+    @user = User.new(user_params)
 
-    redirect_to root_url
+    if @user.save
+      redirect_to root_url
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to new_user_url
+    end
   end
 
   def show
@@ -29,9 +34,14 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    @user.update!(user_params)
+    if @user.update(user_params)
+      redirect_to root_url
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to new_user_url
+    end
 
-    redirect_to root_url
+
   end
 
   private

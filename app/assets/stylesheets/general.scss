@@ -12,6 +12,21 @@ body{
   width: 1024px - 20px;
 }
 
+.errors{
+  padding: 10px 0;
+
+  li{
+    color: red;
+    padding: 5px 0;
+
+    &:before{
+      content: "! ";
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+}
+
 form{
   //padding: 0 0 10px 10px;
 

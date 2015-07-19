@@ -4,9 +4,11 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :name, :password
   validates_uniqueness_of :email, :name
   # validates :password, length: {minimum: 6}
-  validates :name, format: {with: /\A[^@]+\z/}
+  validates :name, format: {with: /\A[^@]+\z/, message: ""}
+  validates :email, format: {with: /@/, message: "must be a valid email address"}
 
   has_many :sessions
+  has_many :cards
 
   def password=(password)
     @password = password

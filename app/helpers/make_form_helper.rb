@@ -1,4 +1,14 @@
 module MakeFormHelper
+  def errors
+    return "" unless flash[:errors]
+
+    output = "<ul class=\"errors\">"
+    flash[:errors].each { |error| output += "<li>#{error}</li>" }
+    output += "</ul>"
+
+    output
+  end
+
   def make_form(arg, action, *control_args)
     if arg.is_a?(Array)
       obj = nil
@@ -33,6 +43,7 @@ module MakeFormHelper
     end
 
     output = <<-HTML
+      #{errors}
       <form action="#{url}" method="POST">
         <input
           type="hidden"
