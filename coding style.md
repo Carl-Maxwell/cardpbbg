@@ -20,8 +20,8 @@
 * single line blocks should user `{}`, multi-lines should use `do end`
 * parallel lines should be visually parallel
   * (vertically align tokens on consecutive lines, as in:)
-	* (don't always do this ... there's no hard rule)
-	* (but fifty parallel lines should be visually parallel)
+  * (don't always do this ... there's no hard rule)
+  * (but fifty parallel lines should be visually parallel)
 ```ruby
 def some_function
   start = User   .find(params[:id])
@@ -32,15 +32,15 @@ end
 * do not do so if the two lines have different indentations, as in this case:
 ```ruby
 def time(times, date, bad, ideal_range)
-	bad_times  = times.map { |time| time < date || time == bad   ? time.x : nil }
-	good_times = times.map { |time| time > date && time.is_good? ? time.x : nil }
+  bad_times  = times.map { |time| time < date || time == bad   ? time.x : nil }
+  good_times = times.map { |time| time > date && time.is_good? ? time.x : nil }
 
-	if good_times.any?
-		start, stop = ideal_range
-		good_times.select { |time| time > start && time < stop ? time : nil }
-	else
-		nil
-	end
+  if good_times.any?
+    start, stop = ideal_range
+    good_times.select { |time| time > start && time < stop ? time : nil }
+  else
+    nil
+  end
 });
 ```
 * Don't use an empty line at the beginning or end of methods, blocks or conditionals
@@ -66,19 +66,19 @@ end
 * Break up long lines like so:
 ```ruby
 SomeClassWithALongEnoughNameToDemonstrate
-	.where("SELECT something WHERE stuff IS NULL")
-	.joins(:cards)
-	.where(card_which: 14)
-	.pluck(:name, :email)
-	.map { |name, email| "#{name} <#{email}>" }
+  .where("SELECT something WHERE stuff IS NULL")
+  .joins(:cards)
+  .where(card_which: 14)
+  .pluck(:name, :email)
+  .map { |name, email| "#{name} <#{email}>" }
 ```
 * not like so
 ```ruby
 SomeClassWithALongEnoughNameToDemonstrate.where("SELECT something WHERE stuff IS NULL")
-																				 .join(:cards)
-																				 .where(card_which: 14)
-																				 .pluck(:name, :email)
-																				 .map { |name, email| "#{name} <#{email}>" }
+                                         .join(:cards)
+                                         .where(card_which: 14)
+                                         .pluck(:name, :email)
+                                         .map { |name, email| "#{name} <#{email}>" }
 ```
 * calling functions on `end` statements is acceptable, though ugly.
 ```ruby
