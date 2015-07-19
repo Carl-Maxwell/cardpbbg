@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  password_digest: MyString
+  click: 1
+  last_click_time: 2015-07-17 13:00:43
+
+two:
+  email: MyString
+  password_digest: MyString
+  click: 1
+  last_click_time: 2015-07-17 13:00:43

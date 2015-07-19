@@ -1,0 +1,25 @@
+
+
+user
+	email
+	password_digest
+	click
+	last_click_time
+
+concern: password
+concern: session?
+
+# TODO forgot password
+
+session
+	session_token
+	user
+#	useragent
+
+card
+	card_which
+	user
+	
+
+
+

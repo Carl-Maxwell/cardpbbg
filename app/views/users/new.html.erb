@@ -1,0 +1,10 @@
+<h1>Users#new</h1>
+<%=
+  make_form(
+    @user,
+    :create,
+    [:email, :text],
+    [:name, :text],
+    [:password, :password]
+  )
+%>

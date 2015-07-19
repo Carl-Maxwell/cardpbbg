@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="body_wrapper">
+  <div class="navbar">
+    <%
+      if logged_in?
+        %>
+          Welcome
+          <%= link_to current_user.name, current_user %>!
+          <%= button_to "Logout", sessions_url, method: :delete %>
+        <%
+      else
+        %>
+          Welcome guest!
+          <%= link_to "Login", new_sessions_url %> |
+          <%= link_to "Register", new_user_url %>
+        <%
+      end
+    %>
+  </div>
 
-<%= yield %>
-
+  <%= yield %>
+</div>
 </body>
 </html>
